@@ -24,6 +24,7 @@
   },
   "contributors": [],
   "scripts": {
+    "test":"start",
     "type":"module"
   },
   "dependencies": {
