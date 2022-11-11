@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', async () =>{
+
     const carsTemplateText = document.querySelector('.carsTemplate');
 const carsTemplate = Handlebars.compile(carsTemplateText.innerHTML);
 const carsElem = document.querySelector('.cars');
@@ -41,4 +41,3 @@ axios.get('https://api-tutor.herokuapp.com/v1/makes')
   
 
 
-})
