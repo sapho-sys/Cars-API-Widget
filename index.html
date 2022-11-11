@@ -71,16 +71,7 @@
     
        
        <div class="data">
-        <script type="text/x-template"  class="carsTemplate">
-            {{#each cars}}
-            <tr>
-                <td>{{make}}</td>
-                <td>{{model}}</td>
-                <td>{{color}}</td>
-                <td>R{{price}}</td>
-            </tr>
-            {{/each}}
-        </script>
+        
         <table id="customers">
             <thead>
                 <tr>
@@ -91,6 +82,16 @@
                 </tr>
             </thead>
             <tbody class="cars">
+                <script type="text/x-template"  class="carsTemplate">
+                    {{#each cars}}
+                    <tr>
+                        <td>{{make}}</td>
+                        <td>{{model}}</td>
+                        <td>{{color}}</td>
+                        <td>R{{price}}</td>
+                    </tr>
+                    {{/each}}
+                </script>
                 <!-- Put data from the API in here -->
     
             </tbody>
