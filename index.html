@@ -36,53 +36,70 @@
     </div>
 
     <br><br><br>
-    <div class="filter">
-        <div class="colors">
+    <section class="container">
+        <div class="filter">
+            <div class="filbox">
+                <h3><strong>Filter by:</strong></h3>
+            </div>
+            
             <h5>Color</h5>
-    
-            <script type="text/x-template" class="colorsTemplate">
-                    <select name="brand" id="colors">
-                <option value="all">ALL</option>
-                    {{#each colors}}
-                     <option value="{{this}}">{{this}}</option>
-                    {{/each}}
-                </select>
-                </script>
+            <div class="colors">
+                
+        
+                <script type="text/x-template" class="colorsTemplate">
+                        <select name="brand" id="colors">
+                    <option value="all">ALL</option>
+                        {{#each colors}}
+                         <option value="{{this}}">{{this}}</option>
+                        {{/each}}
+                    </select>
+                    </script>
+        
+            </div>
+            <h5>Make</h5>
+            <div class="makes">
+                
+        
+                <script type="text/x-template" class="makeTemplate">
+                        <select name="brand" id="makes">
+                    <option value="all">ALL</option>
+                        {{#each makes}}
+                         <option value="{{this}}">{{this}}</option>
+                        {{/each}}
+                    </select>
+                    </script>
+        
+            </div>
+            <br>
+
+            <div class="search">
+                <button type="submit" data-bs-dismiss="modal" class="btn btn-primary filter-button">SEARCH</button>
+              </div>
     
         </div>
     
-        <div class="makes">
-            <h5>Color</h5>
+       
+       <div class="data">
+        <table id="customers">
+            <thead>
+                <tr>
+                    <th>Car name</th>
+                    <th>Model</th>
+                    <th>Color</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody class="cars">
+                <!-- Put data from the API in here -->
     
-            <script type="text/x-template" class="makeTemplate">
-                    <select name="brand" id="makes">
-                <option value="all">ALL</option>
-                    {{#each makes}}
-                     <option value="{{this}}">{{this}}</option>
-                    {{/each}}
-                </select>
-                </script>
+            </tbody>
+        </table>
     
-        </div>
+       </div>
+        
 
-    </div>
-
+    </section>
    
-
-    <table id="customers">
-        <thead>
-            <tr>
-                <th>Car name</th>
-                <th>Model</th>
-                <th>Color</th>
-                <th>Price</th>
-            </tr>
-        </thead>
-        <tbody class="cars">
-            <!-- Put data from the API in here -->
-
-        </tbody>
-    </table>
 
 </body>
 
