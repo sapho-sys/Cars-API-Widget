@@ -1,38 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Car API</title>
-    <link rel="stylesheet" href="./public/css/style.css"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js" integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.min.js" integrity="sha512-0qU9M9jfqPw6FKkPafM3gy2CBAvUWnYVOfNPDYKVuRTel1PrciTj+a9P3loJB+j0QmN2Y0JYQmkBBS8W+mbezg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    
-    <script class="carsTemplate" type="text/template-x" >
+    <link rel="stylesheet" href="./public/css/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"
+        integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.min.js"
+        integrity="sha512-0qU9M9jfqPw6FKkPafM3gy2CBAvUWnYVOfNPDYKVuRTel1PrciTj+a9P3loJB+j0QmN2Y0JYQmkBBS8W+mbezg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script class="carsTemplate" type="text/template-x">
         {{#each cars}}
         <tr>
             <td>{{make}}</td>
             <td>{{model}}</td>
             <td>{{color}}</td>
-            <td>{{price}}</td>
+            <td>R{{price}}</td>
         </tr>
         {{/each}}
     </script>
-    
+
+
     <script src="/index.js" defer></script>
+
 </head>
+
 <body>
     <div class="topnav">
         <a class="active" href="#home">Cars API</a>
-        <a href="#news">#</a>
-        <a href="#contact">#</a>
-        <a href="#about">#</a>
-      </div>
+    </div>
 
-      <br><br><br>
+    <br><br><br>
+    <div class="filter">
+        <div class="colors">
+            <h5>Color</h5>
+    
+            <script type="text/x-template" class="colorsTemplate">
+                    <select name="brand" id="colors">
+                <option value="all">ALL</option>
+                    {{#each colors}}
+                     <option value="{{this}}">{{this}}</option>
+                    {{/each}}
+                </select>
+                </script>
+    
+        </div>
+    
+        <div class="makes">
+            <h5>Color</h5>
+    
+            <script type="text/x-template" class="makeTemplate">
+                    <select name="brand" id="makes">
+                <option value="all">ALL</option>
+                    {{#each makes}}
+                     <option value="{{this}}">{{this}}</option>
+                    {{/each}}
+                </select>
+                </script>
+    
+        </div>
 
-      <table id="customers">
+    </div>
+
+   
+
+    <table id="customers">
         <thead>
             <tr>
                 <th>Car name</th>
@@ -46,6 +83,7 @@
 
         </tbody>
     </table>
-    
+
 </body>
+
 </html>
