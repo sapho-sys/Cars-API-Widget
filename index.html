@@ -14,16 +14,7 @@
         integrity="sha512-0qU9M9jfqPw6FKkPafM3gy2CBAvUWnYVOfNPDYKVuRTel1PrciTj+a9P3loJB+j0QmN2Y0JYQmkBBS8W+mbezg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <script class="carsTemplate" type="text/template-x">
-        {{#each cars}}
-        <tr>
-            <td>{{make}}</td>
-            <td>{{model}}</td>
-            <td>{{color}}</td>
-            <td>R{{price}}</td>
-        </tr>
-        {{/each}}
-    </script>
+   
 
 
     <script src="/index.js" defer></script>
@@ -80,6 +71,16 @@
     
        
        <div class="data">
+        <script type="text/x-template"  class="carsTemplate">
+            {{#each cars}}
+            <tr>
+                <td>{{make}}</td>
+                <td>{{model}}</td>
+                <td>{{color}}</td>
+                <td>R{{price}}</td>
+            </tr>
+            {{/each}}
+        </script>
         <table id="customers">
             <thead>
                 <tr>
