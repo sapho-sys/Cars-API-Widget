@@ -13,10 +13,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.min.js"
         integrity="sha512-0qU9M9jfqPw6FKkPafM3gy2CBAvUWnYVOfNPDYKVuRTel1PrciTj+a9P3loJB+j0QmN2Y0JYQmkBBS8W+mbezg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js" ></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js"></script>
 
-   
+
 
 
     <script src="/index.js" defer></script>
@@ -34,57 +34,57 @@
             <div class="filbox">
                 <h3><strong>Filter by:</strong></h3>
             </div>
-            
+
             <h5>Color</h5>
             <div class="colors">
-                
-        
+
+
                 <script type="text/x-template" class="colorsTemplate">
-                        <select name="brand" id="colors">
-                    <option value="all">ALL</option>
-                        {{#each colors}}
-                         <option value="{{this}}">{{this}}</option>
-                        {{/each}}
-                    </select>
-                    </script>
-        
+
+                {{#each colors}}
+                <input type="checkbox" id="vehicle1" name="vehicle1" value="{{this}}">
+                <label for="vehicle1">{{this}}</label><br>
+                {{/each}}
+           
+                </script>
+
             </div>
             <h5>Make</h5>
             <div class="makes">
-                
-        
+
+
                 <script type="text/x-template" class="makeTemplate">
-                        <select name="brand" id="makes">
-                    <option value="all">ALL</option>
+
                         {{#each makes}}
-                         <option value="{{this}}">{{this}}</option>
+                        <input type="checkbox" id="vehicle1" name="vehicle1" value="{{this}}">
+                <label for="vehicle1">{{this}}</label><br>
                         {{/each}}
-                    </select>
+                    
                     </script>
-        
+
             </div>
             <br>
 
             <div class="search">
                 <button type="submit" data-bs-dismiss="modal" class="btn btn-primary filter-button">SEARCH</button>
-              </div>
-    
+            </div>
+
         </div>
-    
-       
-       <div class="data">
-        
-        <table id="customers">
-            <thead>
-                <tr>
-                    <th>Car name</th>
-                    <th>Model</th>
-                    <th>Color</th>
-                    <th>Price</th>
-                </tr>
-            </thead>
-            <tbody class="cars">
-                <script type="text/x-template"  class="carsTemplate">
+
+
+        <div class="data">
+
+            <table id="customers">
+                <thead>
+                    <tr>
+                        <th>Car name</th>
+                        <th>Model</th>
+                        <th>Color</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody class="cars">
+                    <script type="text/x-template" class="carsTemplate">
                     {{#each cars}}
                     <tr>
                         <td>{{make}}</td>
@@ -94,16 +94,16 @@
                     </tr>
                     {{/each}}
                 </script>
-                <!-- Put data from the API in here -->
-    
-            </tbody>
-        </table>
-    
-       </div>
-        
+                    <!-- Put data from the API in here -->
+
+                </tbody>
+            </table>
+
+        </div>
+
 
     </section>
-   
+
 
 </body>
 
