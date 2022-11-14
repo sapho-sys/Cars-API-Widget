@@ -35,29 +35,35 @@ axios.get('https://api-tutor.herokuapp.com/v1/makes')
         });
     });
 
+
+
 document.querySelector('.search').addEventListener('click', async () => {
-    if(colorElem.value){
-        await axios.get('http://api-tutor.herokuapp.com//v1/cars/color/${colorElem.value}')
+    const color = document.querySelector('#colors:checked');
+    const make = document.querySelector('#makes:checked');
+    
+    console.log(make.value);
+    if(color.value){
+        await axios.get(`http://api-tutor.herokuapp.com/v1/cars/color/${color.value}`)
         .then(result => {
             const data = result.data;
             carsElem.innerHTML = carsTemplate({
-                data
+                cars: data
             })
         })
-    }else if(makesElem.value){
-        await axios.get('http://api-tutor.herokuapp.com//v1/cars/color/${makesElem.value}')
+    }else if(make.value){
+        await axios.get(`http://api-tutor.herokuapp.com/v1/cars/make/${make.value}`)
         .then(result =>{
             const data = result.data;
             carsElem.innerHTML = carsTemplate({
-                data
+                cars: data
             })
         })
-    }else if(colorElem.value && makesElem.value){
-        await axios.get('http://api-tutor.herokuapp.com/v1/cars/make/${makesElem.value}/color/${colorElem.value}')
+    }else if(color.value && make.value){
+        await axios.get(`http://api-tutor.herokuapp.com/v1/cars/make/${make.value}/color/${color.value}`)
         .then(result =>{
             const data = result.data;
             carsElem.innerHTML = carsTemplate({
-                data
+                cars:data
             })
         })
     }

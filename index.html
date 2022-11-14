@@ -35,7 +35,7 @@
                 <script type="text/x-template" class="colorsTemplate">
 
                 {{#each colors}}
-                <input type="checkbox" id="vehicle1" name="vehicle1" value="{{this}}">
+                <input type="radio" id="colors" name="colors" value="{{this}}">
                 <label for="vehicle1">{{this}}</label><br>
                 {{/each}}
            
@@ -48,8 +48,8 @@
 
                 <script type="text/x-template" class="makeTemplate">
                         {{#each makes}}
-                        <input type="checkbox" id="vehicle1" name="vehicle1" value="{{this}}">
-                <label for="vehicle1">{{this}}</label><br>
+                        <input type="radio" id="makes" name="makes" value="{{this}}">
+                        <label for="vehicle1">{{this}}</label><br>
                         {{/each}}
                     </script>
 
@@ -57,7 +57,7 @@
             <br>
 
             <div class="search">
-                <button type="submit"  class="btn btn-primary filter-button">SEARCH</button>
+                <button type="submit" class="search">SEARCH</button>
             </div>
 
         </div>
@@ -75,7 +75,7 @@
                     </tr>
                 </thead>
                 <tbody class="cars">
-                    <script type="text/x-template" class="carsTemplate">
+                    <script  class="carsTemplate" type="text/x-template">
                     {{#each cars}}
                     <tr>
                         <td>{{make}}</td>
