@@ -10,6 +10,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/BrowserFS/2.0.0/browserfs.min.js"></script>
+    <script  class="carsTemplate" type="text/template-x">
+        {{#each cars}}
+        <tr>
+            <td>{{make}}</td>
+            <td>{{model}}</td>
+            <td>{{color}}</td>
+            <td>R{{price}}</td>
+        </tr>
+        {{/each}}
+    </script>
 
 
    
@@ -75,16 +85,7 @@
                     </tr>
                 </thead>
                 <tbody class="cars">
-                    <script  class="carsTemplate" type="text/x-template">
-                    {{#each cars}}
-                    <tr>
-                        <td>{{make}}</td>
-                        <td>{{model}}</td>
-                        <td>{{color}}</td>
-                        <td>R{{price}}</td>
-                    </tr>
-                    {{/each}}
-                </script>
+                  
                     <!-- Put data from the API in here -->
 
                 </tbody>
