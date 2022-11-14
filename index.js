@@ -27,7 +27,7 @@ axios.get('https://api-tutor.herokuapp.com/v1/makes')
     const carsTemplateText = document.querySelector('.carsTemplate');
     const carsTemplate = Handlebars.compile(carsTemplateText.innerHTML);
     const carsElem = document.querySelector('.cars');
-    axios.get('http://api-tutor.herokuapp.com/v1/cars')
+    axios.get('https://api-tutor.herokuapp.com/v1/cars')
     .then(result => {
         const cars = result.data;
         carsElem.innerHTML = carsTemplate({
@@ -43,7 +43,7 @@ document.querySelector('.search').addEventListener('click', async () => {
     
     console.log(make.value);
     if(color.value){
-        await axios.get(`http://api-tutor.herokuapp.com/v1/cars/color/${color.value}`)
+        await axios.get(`https://api-tutor.herokuapp.com/v1/cars/color/${color.value}`)
         .then(result => {
             const data = result.data;
             carsElem.innerHTML = carsTemplate({
@@ -51,7 +51,7 @@ document.querySelector('.search').addEventListener('click', async () => {
             })
         })
     }else if(make.value){
-        await axios.get(`http://api-tutor.herokuapp.com/v1/cars/make/${make.value}`)
+        await axios.get(`https://api-tutor.herokuapp.com/v1/cars/make/${make.value}`)
         .then(result =>{
             const data = result.data;
             carsElem.innerHTML = carsTemplate({
@@ -59,7 +59,7 @@ document.querySelector('.search').addEventListener('click', async () => {
             })
         })
     }else if(color.value && make.value){
-        await axios.get(`http://api-tutor.herokuapp.com/v1/cars/make/${make.value}/color/${color.value}`)
+        await axios.get(`https://api-tutor.herokuapp.com/v1/cars/make/${make.value}/color/${color.value}`)
         .then(result =>{
             const data = result.data;
             carsElem.innerHTML = carsTemplate({
