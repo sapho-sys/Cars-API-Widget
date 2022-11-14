@@ -42,23 +42,26 @@ document.querySelector('.search').addEventListener('click', async () => {
     const make = document.querySelector('#makes:checked');
     
     console.log(make.value);
-    if(color.value){
-        await axios.get(`https://api-tutor.herokuapp.com/v1/cars/color/${color.value}`)
+    if(make.value){
+        await axios.get(`https://api-tutor.herokuapp.com/v1/cars/make/${make.value}`)
         .then(result => {
             const data = result.data;
             carsElem.innerHTML = carsTemplate({
                 cars: data
             })
         })
-    }else if(make.value){
-        await axios.get(`https://api-tutor.herokuapp.com/v1/cars/make/${make.value}`)
+    }
+    
+    if(color.value){
+        await axios.get(`https://api-tutor.herokuapp.com/v1/cars/color/${color.value}`)
         .then(result =>{
             const data = result.data;
             carsElem.innerHTML = carsTemplate({
                 cars: data
             })
         })
-    }else if(color.value && make.value){
+    }
+    if(color.value && make.value){
         await axios.get(`https://api-tutor.herokuapp.com/v1/cars/make/${make.value}/color/${color.value}`)
         .then(result =>{
             const data = result.data;
