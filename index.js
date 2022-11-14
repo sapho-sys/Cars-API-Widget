@@ -1,5 +1,4 @@
-
-    const carsTemplateText = document.querySelector('.carsTemplate');
+const carsTemplateText = document.querySelector('.carsTemplate');
 const carsTemplate = Handlebars.compile(carsTemplateText.innerHTML);
 const carsElem = document.querySelector('.cars');
 
