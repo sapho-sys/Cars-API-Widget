@@ -27,7 +27,7 @@ axios.get('https://api-tutor.herokuapp.com/v1/makes')
     const carsTemplateText = document.querySelector('.carsTemplate');
     const carsTemplate = Handlebars.compile(carsTemplateText.innerHTML);
     const carsElem = document.querySelector('.cars');
-    axios.get('https://api-tutor.herokuapp.com/v1/cars')
+    axios.get('https://api-tutor.herokuapp.com/v1/cars?_limit=30')
     .then(result => {
         const cars = result.data;
         carsElem.innerHTML = carsTemplate({
@@ -35,7 +35,13 @@ axios.get('https://api-tutor.herokuapp.com/v1/makes')
         });
     });
 
-
+    axios.get(`https://images.dog.ceo/breeds/setter-english/n02100735_4870.jpg`)
+    .then(result =>{
+        const data = result.data;
+        carsElem.innerHTML = carsTemplate({
+            pic: data
+        })
+    })
 
 document.querySelector('.search').addEventListener('click', async () => {
     const color = document.querySelector('#colors:checked');
